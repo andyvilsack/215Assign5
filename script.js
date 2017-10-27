@@ -120,11 +120,13 @@ function playerWins(doorToOpen)
 }
 
 function playerLoses(doorToOpen)
-// handle a loss. Called by secondRound()
 {
    var imageId="door"+doorToOpen;
 	 document.getElementById(imageId).src="goat-and-bambis-fawns_w290_h218.jpg";
 	 alert("you lost");
+	 count = document.getElementById("lossesDiv").innerHTML;
+	 count++;
+	 document.getElementById("lossesDiv").innerHTML = count;
 	 totalNumberOfGames++;
 	 numberOfTimesPlayerLost++;
 	 var percent = numberOfTimesPlayerWon / totalNumberOfGames * 100;
@@ -136,5 +138,5 @@ function displayStats(percentage)
 {
    document.getElementById('gamesDiv').innerHTML = totalNumberOfGames;
 	 document.getElementById('winsDiv').innerHTML = numberOfTimesPlayerWon;
-   document.getElementById('percentDiv').innerHTML = percentage;
+   document.getElementById('percentDiv').innerHTML = percentage.toFixed(2);
 }
