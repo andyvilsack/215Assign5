@@ -13,13 +13,13 @@ function initialize()
 	doors = [ "win-or-lose", "win-or-lose", "win-or-lose" ]; // our representation of the doors
 	// let's get started
 	setUpForAGame();
-	document.getElementById('intruct').innerHTML = "Select a door...";
 }
 
 function setUpForAGame()
 // prepare for a new game... called from initialize() and secondRound()
 {
-   userMadeFirstSelection = false;
+	 document.getElementById('instruct').innerHTML = "Select a door...";
+		 userMadeFirstSelection = false;
 	 // start with all doors as losers
 	 for(var i=0; i<doors.length; i++)
 	     doors[i] = "lose";
@@ -28,11 +28,11 @@ function setUpForAGame()
 	 alert("winning door is " + (winner+1));
 	 // reset all images and cells backgrounds on page
 	 for(var i=1; i<4; i++){
-	    var imageId = 'door' + i;
+	    var imageId = "door" + i;
 	    document.getElementById(imageId).src = "locked-wooden-door_w290_h218.jpg";
 			document.getElementById(imageId).height = 218;
 			document.getElementById(imageId).width = 290;
-			}
+	}
 }
 
 function userSelected(doorNumber)
@@ -70,26 +70,30 @@ function firstRound(doorNumber)
 	 //document.getElementById(imageId).src="goat-and-bambis-fawns_w290_h218.jpg";
 	 setTimeout("delayedDisplay()",1000);
 	 doorWeOpenedAlready = doorToOpen; // remember this for round two
-	 document.getElementById('intruct').innerHTML = "I'll show you what's behind door number " +
+	 document.getElementById('instruct').innerHTML = "I'll show you what's behind door number " +
 	       doorToOpen +". Pick one of the remaining doors to see if you win.";
 }
 
 function pickOneOfRemainingDoors(initialSelection)
-// Selects the loser to display (randomly, after you fix it). Called by firstRound()
-{
-   // show host can see behind doors... we have to peek. Select a door to look behind
-	 var candidate;
-	 for (candidate=0; candidate<3; candidate++)
-	 	{
-		  if ((candidate + 1 == initialSelection)	// they picked this one
-			     ||																	// OR
-			    (doors[candidate] == "win"))  			// this is the winner
-			   			continue;												// skip it
-			else
-							break;													// we found a loser
+// Selects the loser to display. Called by firstRound()
+{	
+	var candidate;
+	var randomNumber = initialSelection; //set random number as initialSelection for while condition
+	
+		//find which is the winning door
+ 		for (candidate = 0; candidate < 3; candidate++){
+			  	if (doors[candidate] == "win")  // this is the winner
+				   			break;												
 		}
-	 candidate++;  // door number is one more than array index
-	 return candidate;
+		candidate += 1; //increment winning door to be in range 1-3, not 0-2
+
+		//generate random number that is not the same as the winning door, or the initial door selected
+		while(randomNumber == initialSelection || randomNumber == candidate){
+			randomNumber = Math.floor(Math.random() * 3) + 1;
+		}
+		candidate = randomNumber;
+
+	return candidate;
 }
 
 function secondRound(doorNumber)
