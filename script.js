@@ -144,3 +144,11 @@ function displayStats(percentage)
 	 document.getElementById('winsDiv').innerHTML = numberOfTimesPlayerWon;
    document.getElementById('percentDiv').innerHTML = percentage.toFixed(2);
 }
+
+function showSource() {
+	document.getElementById("outputDiv").innerHTML="Public Domain Image dot com";
+}
+
+function hideSource() {
+	document.getElementById("outputDiv").innerHTML="";
+}
