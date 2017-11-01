@@ -126,7 +126,7 @@ function secondRound(doorNumber)
 			  document.getElementById(imageId).width = 290;
 	  }
     }, 
-    2000);
+    1000);
 }
 
 function playerWins(doorToOpen)
