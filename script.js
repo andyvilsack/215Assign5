@@ -108,14 +108,32 @@ function secondRound(doorNumber)
 	else
 	   playerLoses(doorNumber);
 	// get ready for next game
-	setUpForAGame();
+	// setUpForAGame();
+	setTimeout(function(){
+      document.getElementById('instruct').innerHTML = "Select a door...";
+		  userMadeFirstSelection = false;
+	  // start with all doors as losers
+	  for(var i=0; i<doors.length; i++)
+	      doors[i] = "lose";
+	  var winner = Math.floor(Math.random() * 3); // max is 2, min is 0
+	  doors[winner] = "win"; // we now have 1 winner and 2 losers
+	  alert("winning door is " + (winner+1));
+	  // reset all images and cells backgrounds on page
+	  for(var i=1; i<4; i++){
+	      var imageId = "door" + i;
+	      document.getElementById(imageId).src = "locked-wooden-door_w290_h218.jpg";
+			  document.getElementById(imageId).height = 218;
+			  document.getElementById(imageId).width = 290;
+	  }
+    }, 
+    2000);
 }
 
 function playerWins(doorToOpen)
 // handle a win. Called by secondRound()
 {
    var imageId="door"+doorToOpen;
-	 document.getElementById(imageId).src="blue-ford-falcon-ba-xr6-car_w290_h218.jpg"
+	 document.getElementById(imageId).src="blue-ford-falcon-ba-xr6-car_w290_h218.jpg";
 	 alert("you won!");
 	 totalNumberOfGames++;
 	 numberOfTimesPlayerWon++;
