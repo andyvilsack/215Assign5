@@ -25,7 +25,7 @@ function setUpForAGame()
 	     doors[i] = "lose";
 	 var winner = Math.floor(Math.random() * 3); // max is 2, min is 0
 	 doors[winner] = "win"; // we now have 1 winner and 2 losers
-	 alert("winning door is " + (winner+1));
+	 // alert("winning door is " + (winner+1));
 	 // reset all images and cells backgrounds on page
 	 for(var i=1; i<4; i++){
 	    var imageId = "door" + i;
@@ -117,7 +117,7 @@ function secondRound(doorNumber)
 	      doors[i] = "lose";
 	  var winner = Math.floor(Math.random() * 3); // max is 2, min is 0
 	  doors[winner] = "win"; // we now have 1 winner and 2 losers
-	  alert("winning door is " + (winner+1));
+	  // alert("winning door is " + (winner+1));
 	  // reset all images and cells backgrounds on page
 	  for(var i=1; i<4; i++){
 	      var imageId = "door" + i;
