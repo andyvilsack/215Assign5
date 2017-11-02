@@ -14,50 +14,52 @@
 
 <html>
 <head>
-<title>Monte Hall Problem</title>
-<link href="styles.css" rel="stylesheet">
-<script src ="script.js"></script>
+  <title>Monte Hall Problem</title>
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body onload="initialize();">
-<table summary="layout" style="margin-left:auto;margin-right:auto;width:950px;text-align:center">
-<tr>
-<td><b>Games:</b> <div id="gamesDiv">0</div></td>
-<td><b>Wins:</b> <div id="winsDiv">0</div></td>
-<td><b>Losses:</b> <div id="lossesDiv">0</div></td>
-<td><b>Percent wins:</b> <div id="percentDiv">0</div></td>
-</tr>
-</table>
-<table id="theTable" border="1" cellpadding="10" cellspacing="0" summary="layout" style="margin-left:auto;margin-right:auto;width:950px;text-align:center">
-<tr onmouseover="showSource()" onmouseout="hideSource()">
-<td style="background-color:#C0C0C0" id="td1"><img alt="door" src="locked-wooden-door_w290_h218.jpg" height="218" width="290" 
-       onclick="userSelected(1);" id="door1" />
-</td>
-<td style="background-color:#C0C0C0" id="td2"><img alt="door" src="locked-wooden-door_w290_h218.jpg" height="218" width="290"
-       onclick="userSelected(2);" id="door2" />
-</td>
-<td style="background-color:#C0C0C0" id="td3"><img alt="door" src="locked-wooden-door_w290_h218.jpg" height="218" width="290"
-       onclick="userSelected(3);" id="door3" />
-</td>
-</tr>
-<tr>
-<td colspan=3><h3><div id="instruct"></div></h3>
-</td>
-</tr>
-<tr>
-<td colspan=3>
-<h2>The Monte Hall Problem</h2>
-<p>
-Suppose you're on a game show, and you're given the choice of three doors: Behind 
-one door is a car; behind the others, goats. You pick a door, say No. 1, and the 
-host, who knows what's behind the doors, opens another door, say No. 3, which has 
-a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your 
-advantage to switch your choice? (vos Savant, Marilyn (9 September 1990a). 
-"Ask Marilyn". Parade Magazine: 16.)
-</p>
-<p><small>As quoted in <b>Monty Hall problem</b> on <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Wikipedia.</a></small></p>
-</td>
-</tr>
-</table>
-<a href="http://www.public-domain-image.com" target="_blank">Image source</a><div id="outputDiv"></div>
+  <table summary="layout" style="margin-left:auto;margin-right:auto;width:950px;text-align:center">
+    <tr>
+    <td><b>Games:</b> <div id="gamesDiv">0</div></td>
+    <td><b>Wins:</b> <div id="winsDiv">0</div></td>
+    <td><b>Losses:</b> <div id="lossesDiv">0</div></td>
+    <td><b>Percent wins:</b> <div id="percentDiv">0</div></td>
+    </tr>
+    </table>
+    <table id="theTable" border="1" cellpadding="10" cellspacing="0" summary="layout" style="margin-left:auto;margin-right:auto;width:950px;text-align:center">
+    <tr onmouseover="showSource()" onmouseout="hideSource()">
+      <td style="background-color:#C0C0C0" id="td1"><img alt="door" src="locked-wooden-door_w290_h218.jpg" height="218" width="290" 
+            onclick="userSelected(1);" id="door1" />
+      </td>
+      <td style="background-color:#C0C0C0" id="td2"><img alt="door" src="locked-wooden-door_w290_h218.jpg" height="218" width="290"
+            onclick="userSelected(2);" id="door2" />
+      </td>
+      <td style="background-color:#C0C0C0" id="td3"><img alt="door" src="locked-wooden-door_w290_h218.jpg" height="218" width="290"
+            onclick="userSelected(3);" id="door3" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan=3><h3><div id="instruct"></div></h3>
+      </td>
+    </tr>
+    <tr>
+      <td colspan=3>
+      <h2>The Monte Hall Problem</h2>
+      <p>
+      Suppose you're on a game show, and you're given the choice of three doors: Behind 
+      one door is a car; behind the others, goats. You pick a door, say No. 1, and the 
+      host, who knows what's behind the doors, opens another door, say No. 3, which has 
+      a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your 
+      advantage to switch your choice? (vos Savant, Marilyn (9 September 1990a). 
+      "Ask Marilyn". Parade Magazine: 16.)
+      </p>
+      <p><small>As quoted in <b>Monty Hall problem</b> on <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Wikipedia.</a></small></p>
+      </td>
+    </tr>
+  </table>
+  <a href="http://www.public-domain-image.com" target="_blank">Image source</a><div id="outputDiv"></div>
+  <audio id="win" src="horn.mp3"></audio>
+  <audio id="lose" src="lose.mp3"></audio>
+  <script src ="script.js"></script>
 </body>
 </html>

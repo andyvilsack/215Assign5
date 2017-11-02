@@ -132,6 +132,7 @@ function secondRound(doorNumber)
 function playerWins(doorToOpen)
 // handle a win. Called by secondRound()
 {
+	playWin();
    var imageId="door"+doorToOpen;
 	 document.getElementById(imageId).src="blue-ford-falcon-ba-xr6-car_w290_h218.jpg";
 	 alert("you won!");
@@ -143,6 +144,7 @@ function playerWins(doorToOpen)
 
 function playerLoses(doorToOpen)
 {
+	playLose();
    var imageId="door"+doorToOpen;
 	 document.getElementById(imageId).src="goat-and-bambis-fawns_w290_h218.jpg";
 	 alert("you lost");
@@ -169,4 +171,14 @@ function showSource() {
 
 function hideSource() {
 	document.getElementById("outputDiv").innerHTML="";
+}
+
+function playWin() {
+  var winSound = document.getElementById("win");  
+  winSound.play();
+}
+
+function playLose() {
+  var loseSound = document.getElementById("lose");  
+  loseSound.play();
 }

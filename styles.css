@@ -2,15 +2,7 @@ body {
 	background-color: cornsilk
 }
 
-#td1:hover {
+#td1:hover,#td2:hover, #td3:hover {
   padding-bottom: 30px;
+  cursor: pointer;
 }
-
-#td2:hover {
-  padding-bottom: 30px;
-}
-
-#td3:hover {
-  padding-bottom: 30px;
-}
-
